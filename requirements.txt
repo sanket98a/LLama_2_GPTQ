@@ -8,3 +8,5 @@ Xformers==0.0.20
 pypdf==3.9.1
 bitsandbytes==0.41.0
 accelerate==0.21.0
+sentencepiece==0.1.97
+loralib==0.1.1
