@@ -20,6 +20,8 @@ import logging
 
 import torch
 
+logging.info("Cuda",torch.cuda.is_available())
+
 #-----------------------------------------------------------------------------------------------------------------
 def set_custom_prompt():
     """
@@ -75,7 +77,7 @@ def load_llm():
 #QA Model Function
 def qa_bot():
     embeddings = HuggingFaceEmbeddings(model_name=EMBEDDING_MODEL_NAME,
-                                       model_kwargs={'device': 'cuda'})
+                                       model_kwargs={'device': 'cuda:0'})
     # embeddings = HuggingFaceInstructEmbeddings(model_name=EMBEDDING_MODEL_NAME,
     #                                    model_kwargs={'device': 'cpu'})
     db = Chroma(

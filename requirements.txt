@@ -4,3 +4,6 @@ langchain==0.0.245
 transformers==4.31.0
 chromadb==0.3.22
 Xformers==0.0.20
+pypdf==3.9.1
+bitsandbytes==0.41.0
+accelerate==0.21.0
