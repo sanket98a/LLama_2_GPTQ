@@ -42,7 +42,7 @@ def retrieval_qa_chain(llm, prompt, db):
 #Loading the model
 def load_llm():
       model_id="TheBloke/Llama-2-7b-Chat-GPTQ"
-      model_basename="gptq_model-4bit-128g.safetensors"
+      model_basename="model.safetensors"
       # Remove the ".safetensors" ending if present
       model_basename = model_basename.replace(".safetensors", "")
 

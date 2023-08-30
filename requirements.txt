@@ -1,0 +1,5 @@
+chainlit==0.6.1
+auto_gptq==0.2.2
+langchain==0.0.245
+transformers==4.31.0
+chromadb==0.3.22
