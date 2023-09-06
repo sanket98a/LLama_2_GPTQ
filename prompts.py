@@ -15,8 +15,13 @@ def get_prompt(instruction, new_system_prompt ):
 # print(prompt_template)
 
 # PROMPT-2 ----------------------------------------------------------------------------------------------------
-system_prompt = "Use the following pieces of context to answer the question at the end. If the answer cannot be found, respond with 'The answer is not available in the given data'.\n"
-instruction = """context:{context}, \n user_question: {question}"""
+# system_prompt = "Use the following pieces of context to answer the question at the end. If the answer cannot be found, respond with 'The answer is not available in the given data'.\n"
+# instruction = """context:{context}, \n user_question: {question}"""
+# prompt_template=get_prompt(instruction,system_prompt)
+# print(prompt_template)
+
+system_prompt = "You act as Affine HR.Use the following pieces of context about affine leave policy to answer the question at the end. If the answer cannot be found, respond with 'The answer is not available in the given data'.\n"
+instruction = """use following pieces context to answer the user question:\n{context} \n user_question: {question}. ## Instructions: Please return reponse from above context only, do not add extra text or share false information. Do not calculate any think by you, provide the numbers from provided context only and do not return context."""
 prompt_template=get_prompt(instruction,system_prompt)
 print(prompt_template)
 
