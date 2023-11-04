@@ -15,7 +15,7 @@ from constant import (
     EMBEDDING_MODEL_NAME,
     PERSIST_DIRECTORY,
 )
-from prompts import prompt_template
+from prompts import zephyr_prompt_template as prompt_template
 import logging
 
 import torch
@@ -43,7 +43,9 @@ def retrieval_qa_chain(llm, prompt, db):
 
 #Loading the model
 def load_llm():
-      model_id="TheBloke/Llama-2-7b-Chat-GPTQ"
+    #   model_id="TheBloke/Llama-2-7b-Chat-GPTQ"
+    #   model_basename="model.safetensors"
+      model_id="TheBloke/zephyr-7B-alpha-GPTQ"
       model_basename="model.safetensors"
       # Remove the ".safetensors" ending if present
       model_basename = model_basename.replace(".safetensors", "")
