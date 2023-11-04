@@ -9,7 +9,7 @@ from langchain.vectorstores import Chroma
 from transformers import (AutoTokenizer,
                            pipeline)
 from auto_gptq import AutoGPTQForCausalLM
-
+from transformers import AutoModelForCausalLM, AutoTokenizer
 from constant import (
     CHROMA_SETTINGS,
     EMBEDDING_MODEL_NAME,
@@ -53,14 +53,12 @@ def load_llm():
       tokenizer = AutoTokenizer.from_pretrained(model_id, use_fast=True)
       logging.info("Tokenizer loaded")
 
-      model = AutoGPTQForCausalLM.from_quantized(
+      model = AutoModelForCausalLM.from_pretrained(
           model_id,
-          model_basename=model_basename,
-          use_safetensors=True,
           trust_remote_code=True,
-          device="cuda:0",
+          device_map="auto",
           use_triton=False,
-          quantize_config=None,
+           revision="main",
       )
       print("*** Pipeline:")
       pipe = pipeline(
